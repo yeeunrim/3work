@@ -1,0 +1,117 @@
+@charset "UTF-8";
+
+#login{
+  position: relative;
+  height: 100%;
+}
+
+#login_body{
+	width: 100%;
+	height: 500px;
+	position: absolute;
+  top: 123px;
+}
+
+#login_title{
+	width: 550px;
+	position: absolute;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#login_title p:nth-of-type(1) {
+	font-size: 30px;
+	font-family: 'SBAggroM';
+	margin-top: 0;
+	margin-bottom: 30px;
+}
+
+#login_title p:nth-of-type(2) {
+	font-size: 12px;
+	color: #A09D9D;
+	margin-top: 30px;
+	text-align: left;
+	padding-left: 15px;
+}
+
+#login_title p:nth-of-type(2) a{
+	color: black;
+	text-decoration: none;
+}
+
+#login_title p:nth-of-type(3) {
+	font-size: 12px;
+	color: #A09D9D;
+	text-align: left;
+	padding-left: 15px;
+}
+
+#login_title p:nth-of-type(3) a{
+	color: black;
+	text-decoration: none;
+}
+#login_title p:nth-of-type(4) {
+    font-size: 15px;
+    color: #A09D9D;
+    text-align: center;
+		display: flex;
+		flex-basis: 100%;
+   	margin: 80px 0px;
+   	align-items: center;
+}
+#login_title p:nth-of-type(4):before,
+#login_title p:nth-of-type(4):after{
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    line-height: 0px;
+    font-size: 0px;
+    background: #A09D9D;
+    margin: 0px 16px;
+}
+#login_title p:nth-of-type(5) {
+    font-size: 12px;
+    color: #A09D9D;
+    text-align: left;
+    padding-left: 15px;
+}
+#login_title p:nth-of-type(6) {
+    font-size: 15px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+}
+#login_title p:nth-of-type(7){
+	display: flex;
+	justify-content: center;
+}
+#login_title p:nth-of-type(7) a{
+	text-decoration: none;
+}
+#login_title p:nth-of-type(7) img{
+    width: 50px;
+    height: 50px;
+    margin: 0 10px;
+    float: left;
+}
+
+#search_input{
+	width: 500px;
+	border-radius: 5px;
+	border: 1px solid #8B8989;
+	outline: none;
+	margin: 10px;
+	padding: 10px;
+	font-size: 12px;
+}
+
+#login_btn{
+	background: #F1F3E1;
+	border: none;
+	border-radius: 5px;
+	padding: 13px 245px;
+	box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+	margin-top: 22px;
+	font-family: 'SBAggroM';
+	font-size: 12px;
+}

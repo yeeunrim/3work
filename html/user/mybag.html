@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3WORK : WWW</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/mybag.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/aa24b12773.js" crossorigin="anonymous"></script> 
+</head>
+<body>
+  <div id="container" style="height: 2700px;">
+		<div id="mybag">
+    	<!-- 헤더 영역 -->
+      <header>
+        <div id="admin_link">
+          <a href="../main.html">
+             <img src="../../images/header_image.png" alt="header_image" class="header_image">
+          </a>
+        
+          <a href="../html/admin/admin_main.html">
+            <button type="button" id="admin_btn"></button>
+          </a>
+        </div>
+      </header>
+      
+      <section class="msection">
+    		<div id="mcontainer">
+    			<div class="t_box">
+    				<p class = "tag">사용자님의 위시리스트</p>
+    			</div>
+    			
+    			<div class="card">
+    					<div>
+						    <div class="content-container">
+                    <img src="../../images/item/health_item_1.png">
+						        <div class="card-content">
+						            <h3 class="bagh3">
+						                <span class="bagh3_p" th:text="${cart.item.iname}">이고진 짐볼 + 발 펌프</span>
+						            </h3>
+						            <p class="bagp">스트레칭할 때 사용 필수 !</p>
+						            <a href="#" onclick="return confirm('해당 상품을 삭제하시겠습니까?')">
+						                <button type="button" class="bagbt">
+						                    삭제<i class="fa-solid fa-trash" style="padding-left: 40px;"></i>
+						                </button>
+						            </a>
+						            <p class="bagprice">12,400원</p>
+						        </div>
+						    </div>
+						</div>
+    			</div>
+          <div class="card">
+            <div>
+              <div class="content-container">
+                  <img src="../../images/item/health_item_2.png">
+                  <div class="card-content">
+                      <h3 class="bagh3">
+                          <span class="bagh3_p" th:text="${cart.item.iname}">고무나라 필라테스링</span>
+                      </h3>
+                      <p class="bagp">필라테스와 함께하면 너무 좋아요 !</p>
+                      <a href="#" onclick="return confirm('해당 상품을 삭제하시겠습니까?')">
+                          <button type="button" class="bagbt">
+                              삭제<i class="fa-solid fa-trash" style="padding-left: 40px;"></i>
+                          </button>
+                      </a>
+                      <p class="bagprice">9,400원</p>
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="card">
+          <div>
+            <div class="content-container">
+                <img src="../../images/food/health_food_1.jpeg">
+                <div class="card-content">
+                    <h3 class="bagh3">
+                        <span class="bagh3_p" th:text="${cart.item.iname}">아이엠미 잔티젠 이지 버닝 다이어트 1박스 체지방감소 보조제</span>
+                    </h3>
+                    <p class="bagp">잠들기 전 한 알로 간편한 체지방 관리</p>
+                    <a href="#" onclick="return confirm('해당 상품을 삭제하시겠습니까?')">
+                        <button type="button" class="bagbt">
+                            삭제<i class="fa-solid fa-trash" style="padding-left: 40px;"></i>
+                        </button>
+                    </a>
+                    <p class="bagprice">29,800원</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    			
+    			<!-- 페이지 영역 -->
+          <div class="pagination">
+          	<!-- 이전 페이지 -->
+          	<a>
+          		<i class="fa-solid fa-caret-left fa-xl" style="color: #6C7C58; font-size: 20px;"></i>
+          	</a>
+           	<!-- 현재 페이지는 링크없이 숫자만 표시 -->
+           	<span>
+           		<a>1</a>
+           	</span>	
+          	<!-- 다음 페이지 -->
+          	<a>
+          		<i class="fa-solid fa-caret-right fa-xl" style="color: #6C7C58; font-size: 20px;"></i>
+          	</a>
+          </div>
+    		</div>
+    	</section>
+      
+    	<!-- 푸터 영역 -->
+      <footer>
+        <div id="footer_left">
+          <div id="footer_logo">
+            <img src="../../images/main_logo_bgX.png" alt="main_logo_bgX">
+          </div>
+          <div id="footer_menu">
+            <a href="../submenu/privacy.html">개인정보처리방침</a>
+            <a href="../submenu/rule.html">내부정보관리규정</a>
+            <a href="../submenu/faq.html">자주하는질문</a>
+            <a href="../submenu/contact.html">고객센터</a>
+            <a href="../submenu/way.html">오시는 길</a>
+          </div>
+          <div id="footer_info">
+            <p>
+              서울특별시 영등포구 선유동2로 57 이레빌딩, 19F
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              02-6952-0335
+            </p>
+          </div>
+          <div id="footer_copyright">
+            <p>Copyright © 2024 3WORK:WWW Inc. All Right Reserved.</p>
+          </div>
+        </div>
+      </footer>
+  	</div>
+  </div>
+</body>
+</html>
