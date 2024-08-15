@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3WORK : WWW</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/UserpageCss.css">
+  <link rel="stylesheet" href="../../css/cal.css">
+  <script src='../../js/cal.js'></script>
+  <script src='../../js/comments.js'></script>
+  <script src="https://kit.fontawesome.com/7c6041109a.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/common@5.11.2/main.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@5.11.2/main.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@5.11.2/main.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction@5.11.2/main.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/google-calendar@5.11.2/main.min.js"></script>
+  <script type='text/javascript'>
+    document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        headerToolbar: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek,timeGridDay'
+        },
+        initialDate: '2024-02-18',
+        navLinks: true,
+        selectable: true,
+        selectMirror: true,
+        select: function(arg) {
+          var title = prompt('Event Title:');
+          if (title) {
+            calendar.addEvent({
+              title: title,
+              start: arg.start,
+              end: arg.end,
+              allDay: arg.allDay
+            })
+          }
+          calendar.unselect()
+        },
+        eventClick: function(arg) {
+          if (confirm('계획을 삭제하시겠습니까?')) {
+            arg.event.remove()
+          }
+        },
+        editable: true,
+        dayMaxEvents: true, // allow "more" link when too many events
+        events: [
+          {
+            title: '건강 식단 알아보기',
+            start: '2024-02-01'
+          },
+          {
+            title: '금주 일주일 도전!',
+            start: '2024-02-07',
+            end: '2020-02-10'
+          },
+          {
+            groupId: 999,
+            title: '오후 점심 약속',
+            start: '2024-02-09T16:00:00'
+          },
+          {
+            groupId: 999,
+            title: 'PT 수업',
+            start: '2024-02-16T16:00:00'
+          },
+          {
+            title: '전주 맛집 여행',
+            start: '2024-02-11',
+            end: '2024-02-13'
+          },
+          {
+            title: '건강 세미나 참석',
+            start: '2024-02-20T10:30:00',
+            end: '2024-02-20T12:30:00'
+          },
+          {
+            title: '영양제 챙겨먹기',
+            start: '2024-02-20T12:00:00'
+          },
+          {
+            title: 'PT 수업',
+            start: '2024-02-20T14:30:00'
+          },
+          {
+            title: '런닝 뛰기',
+            start: '2024-02-20T17:30:00'
+          },
+          {
+            title: '저녁 산책',
+            start: '2024-02-20T20:00:00'
+          },
+          {
+            title: '친구놈 생일',
+            start: '2024-02-13T07:00:00'
+          },
+          {
+            title: '운동기구 사기',
+            url: 'http://google.com/',
+            start: '2024-02-28'
+          }
+        ],
+     //Google Calendar 이벤트 소스
+        eventSources: [
+            {
+                googleCalendarApiKey: 'AIzaSyDHTs-44astqeioKi196r5ZHhR5J2Zqtao',
+                googleCalendarId: 'yddk866@gmail.com',
+                className: '캘린더',
+                color: '#4885ed', // 이벤트 색상 (옵션)
+                textColor: '#ffffff' // 텍스트 색상 (옵션)
+            }
+        ]
+      });
+      calendar.render();
+    });
+    </script>
+</head>
+<body>
+  <div id="container" style="height: 800px;">
+    <div id="userMain">
+        <!-- BGM bar 영역 -->
+      <div id="bgm-controls" class="bgm-bar">
+          <div class="bgm-title-container">
+              <div id="bgm-title" class="bgm-title"></div>
+          </div>
+          <button id="play-pause-btn" class="play-pause-btn"><i class="fa-solid fa-play"></i></button>
+          <div class="volume-control">
+              <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="1">
+          </div>
+          <input type="color" id="bg-color-picker" value="#f0f0f0">
+      </div>
+      <audio id="bgm-audio" src="../../images/mp3/IU - Love Wins All.mp3" autoplay loop></audio>
+      <!-- 사이드 메뉴 영역 -->
+      <div id="side_title">
+      	<img src="../../images/userpage/board.png" alt="board" width="30px">
+      	<h2>자유게시판</h2>
+      </div>
+      <div id="side_image">
+         <div id="image1">
+            <p>10Kg 감량중!</p>
+            <img src="../../images/userpage/side_image.png" alt="side-image">
+         </div>
+      </div>
+      <div id="side_image2">
+       <div id="image2">
+         <p>
+         <a href="userdiary.html">나의 건강일지</a>
+         </p>
+            <img src="../../images/userpage/health_diary.png" alt="side-image">
+         
+       </div>
+      </div>
+      <!-- 프로필, 캘린더 영역 -->
+      <section id="profile">
+          <p id="today">
+            TODAY <span id="today-visits">5</span> | 
+            TOTAL <span id="total-visits">100</span></p>
+          <div id="profile-pic">
+       	<img src="../../images/default/default_profile.png" style="width: 100%; height: 100%; border-radius: 17px;">
+          </div>
+         <div id="userinfo">
+         	<div id="userinfo_line">
+	          <p>한줄 소개명</p>
+		        <p style = "white-space: pre-line;">운동 루틴 함께 공유해요 !</p>         	
+         	</div>
+					<div id="userinfo_like">
+						<p>좋아하는 것</p>
+		        <p style = "white-space: pre-line;">먹고 운동하기 좋아해요 !</p>
+					</div>
+         </div>
+         
+         <p id="profile_title" style="font-size: 1.3em">사용자의 공간</p>
+         <a href="#">
+             <i class="fa-solid fa-gear" style="color: #ccc;" id="setting1"></i>
+         </a>
+         <a href="#">
+             <i class="fa-solid fa-house" style="color: #ccc;" id="setting2"></i>
+         </a>    
+         <div id='calendar'></div>
+      </section>
+
+      <section id="comments">
+          <h2 id="commenth2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              방명록<img src="../../images/comment.png" alt="방명록">
+          </h2>
+           <!-- 방명록 작성 영역 -->
+          <form id="comment-form">
+              <div id="comment-container">
+                  <input type="hidden" id="uno">
+                  <input type="text" id="comment" name="ccontent" placeholder="자유롭게 방명록을 작성해주세요.">
+                  <button id="btns">작성</button>
+              </div>
+          </form>
+
+        <!-- 방명록 목록 영역 -->
+        <div id="comment-list">
+            <div>
+                <div id="ccontent-body">
+                    <div class="comment-body">
+                        <p>
+                            <span id="replyid">회원1</span>
+                            <span id="reply_time">2024.01.22 17:08</span>
+                        </p>
+                        <div id="comment_update">
+                            <a href="#" id="comment_del">삭제&nbsp;|&nbsp;</a>
+                            <!-- 수정 버튼 -->
+                            <a href="#" id="comment_up">수정</a>
+                        </div>
+                    </div>
+                    <p id="content">저랑 같이 운동해요 !</p>
+                </div>
+            </div>
+            <div>
+                <div id="ccontent-body">
+                    <div class="comment-body">
+                        <p>
+                            <span id="replyid">회원2</span>
+                            <span id="reply_time">2024.01.27 10:12</span>
+                        </p>
+                        <div id="comment_update">
+                            <a href="#" id="comment_del">삭제&nbsp;|&nbsp;</a>
+                            <!-- 수정 버튼 -->
+                            <a href="#" id="comment_up">수정</a>
+                        </div>
+                    </div>
+                    <p id="content">나랑도 같이 맛집가자 !!</p>
+                </div>
+            </div>
+        </div>
+         
+      <!-- 페이지 영역 -->
+      <div class="pagination" id="pagination">
+        <!-- 이전 페이지 -->
+        <a>
+          <i class="fa-solid fa-caret-left fa-xl" style="color: #6C7C58; font-size: 20px;"></i>
+        </a>
+        <!-- 현재 페이지는 링크없이 숫자만 표시 -->
+        <span>
+          <a>1</a>
+        </span>  
+        <!-- 다음 페이지 -->
+        <a>
+          <i class="fa-solid fa-caret-right fa-xl" style="color: #6C7C58; font-size: 20px;"></i>
+        </a>
+      </div>
+    </section>
+  </div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // BGM 재생
+    const audio = document.getElementById('bgm-audio');
+    const playPauseBtn = document.getElementById('play-pause-btn');
+    const bgmTitle = document.getElementById('bgm-title');
+    const bgmControls = document.getElementById('bgm-controls');
+    const bgColorPicker = document.getElementById('bg-color-picker');
+    const volumeSlider = document.getElementById('volume-slider'); // 추가: 볼륨 슬라이더 요소
+
+    // 재생/일시정지 버튼
+    playPauseBtn.addEventListener('click', () => {
+        if (audio.paused) {
+            audio.play();
+            playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+        } else {
+            audio.pause();
+            playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+        }
+    });
+
+    // BGM Bar 배경화면 변경 기능
+    bgColorPicker.addEventListener('input', () => {
+        bgmControls.style.backgroundColor = bgColorPicker.value;
+    });
+
+ // 노래 제목 관련
+    audio.addEventListener('loadedmetadata', () => {
+        // MP3 파일 경로에서 파일명 추출하여 설정
+        const filePath = decodeURIComponent(audio.src); // 오디오 파일 경로 가져오기 및 URL 디코딩
+        const fileName = filePath.substring(filePath.lastIndexOf('/') + 1); // 파일명 추출
+        const songTitle = fileName.substring(0, fileName.lastIndexOf('.')); // 파일명에서 확장자 제거
+        bgmTitle.textContent = songTitle;
+        bgmTitle.title = songTitle; // 오른쪽에서 왼쪽으로 움직일 때 전체 제목을 표시하기 위해 title 속성 설정
+
+        // 자동 재생 상태에 따라 재생/일시 정지 버튼 업데이트
+        if (!audio.paused) {
+            playPauseBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+        } else {
+            playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+        }
+    });
+
+    // Volume control
+    volumeSlider.addEventListener('input', () => {
+        audio.volume = volumeSlider.value;
+    });
+});
+</script>
+</body>
+</html>

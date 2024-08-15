@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3WORK : WWW</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/admin_main.css">
+  <script src="https://kit.fontawesome.com/7c6041109a.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="container" style="height: 900px;">
+		<div id="admin_main">
+    	<!-- 헤더 영역 -->
+      <header>
+        <div id="admin_link">
+          <a href="../main.html">
+             <img src="../../images/header_image.png" alt="header_image" class="header_image">
+          </a>
+        
+          <a href="../html/admin/admin_main.html">
+            <button type="button" id="admin_btn"></button>
+          </a>
+        </div>
+      </header>
+      
+      <section id="admin_main_body">
+        <p class="admin_content_title">관리자</p>
+        <div id="admin_content">
+           <div id="work_recommend">
+             <!-- 추천 카데고리 제목  -->
+             <div class="work_title">
+               <p>RECOMMEND</p>
+             </div>
+             <!-- 추천 카데고리의 메뉴  -->
+             <div class="work_menu">
+               <div id="music">
+               <p>노래관리</p>
+                 <select onchange="window.open(value,'_self');">
+                   <option selected>-- 선택 --</option>
+                   <option value="#">리스트</option>
+                   <option value="#">등록</option>
+                 </select>
+               </div>
+               <div id="food">
+               <p>식품관리</p>
+                 <select onchange="window.open(value,'_self');">
+                   <option selected>-- 선택 --</option>
+                   <option value="#">리스트</option>
+                   <option value="#">등록</option>
+                 </select>
+               </div>
+               <div id="item">
+               <p>아이템관리</p>
+                 <select onchange="window.open(value,'_self');">
+                   <option selected>-- 선택 --</option>
+                   <option value="#">리스트</option>
+                   <option value="#">등록</option>
+                 </select>
+               </div>
+             </div>
+           </div>
+           
+           <div id="work_info">
+             <!-- 추천 카데고리 제목  -->
+             <div class="work_title">
+               <p>INFORMATION</p>
+             </div>
+             <!-- 추천 카데고리의 메뉴  -->
+             <div class="work_menu">
+               <div id="news">
+               <p>뉴스관리</p>
+               <select onchange="window.open(value,'_self');">
+                 <option selected>-- 선택 --</option>
+                 <option value="#">리스트</option>
+                 <option value="#">등록</option>
+               </select>
+               </div>
+               <div id="exercise">
+               <p>꿀팁관리</p>
+               <select onchange="window.open(value,'_self');">
+                 <option selected>-- 선택 --</option>
+                 <option value="#">리스트</option>
+                 <option value="#">등록</option>
+               </select>
+               </div>
+             </div>
+           </div>
+           
+           <div id="work_user">
+             <!-- 회원 카데고리 제목  -->
+             <div class="work_title">
+               <p>USERS</p>
+             </div>
+             <!-- 회원 카데고리의 메뉴  -->
+             <div class="work_menu">
+               <div id="users">
+               <p>회원관리</p>
+               <select onchange="window.open(value,'_self');">
+                 <option selected>-- 선택 --</option>
+                 <option value="#">리스트</option>
+               </select>
+               </div>
+             </div>
+           </div>
+         </div>
+      </section>
+      
+    	<!-- 푸터 영역 -->
+      <footer>
+        <div id="footer_left">
+          <div id="footer_logo">
+            <img src="../../images/main_logo_bgX.png" alt="main_logo_bgX">
+          </div>
+          <div id="footer_menu">
+            <a href="../submenu/privacy.html">개인정보처리방침</a>
+            <a href="../submenu/rule.html">내부정보관리규정</a>
+            <a href="../submenu/faq.html">자주하는질문</a>
+            <a href="../submenu/contact.html">고객센터</a>
+            <a href="../submenu/way.html">오시는 길</a>
+          </div>
+          <div id="footer_info">
+            <p>
+              서울특별시 영등포구 선유동2로 57 이레빌딩, 19F
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              02-6952-0335
+            </p>
+          </div>
+          <div id="footer_copyright">
+            <p>Copyright © 2024 3WORK:WWW Inc. All Right Reserved.</p>
+          </div>
+        </div>
+      </footer>
+  	</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3WORK : WWW</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/diarywriter.css">
+  <script src="https://kit.fontawesome.com/7c6041109a.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="container" style="height: 1000px;">
+    <div id="container2">
+       <section class="writeform">
+         <div id="mcontainer">
+          <div sec:authorize="isAuthenticated()">
+             <h2 id="diarywrite_title">
+                사용자의 건강 다이어리
+             </h2>
+          </div>
+          <form>
+             <div id="title">
+                <input type="text" name="dtitle" placeholder="제목을 작성해주세요.">
+             </div>
+             <div id="content">
+                <textarea rows="20" cols="2000" name="dcontent"
+                   placeholder="내용을 입력해주세요."></textarea>
+             </div>
+             
+             <div class="filebox">
+                <input class="upload-name" value="첨부파일" placeholder="첨부파일"
+                   readonly> <label for="diaryFile" class="file_btn">
+                   파일 찾기</label> <input type="file" id="diaryFile" name="boardFile">
+             </div>
+             <div id="btn-box">
+                <input type="submit" value="등록" id="save_btn1">
+                <a href="userdiary.html">
+                   <button type="button" id="save_btn2">취소</button>
+                </a>
+             </div>
+          </form>
+         </div>
+       </section>
+    </div>
+ </div>
+
+ <!-- 파일명 들어가기 -->
+<script>
+ $("#diaryFile").on('change', function() {
+    var fileName = $("#diaryFile").val();
+    $(".upload-name").val(fileName);
+ });
+</script>
+</body>
+</html>
