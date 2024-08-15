@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3WORK : WWW</title>
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="../../css/musicboard.css">  
+  <script src="https://kit.fontawesome.com/aa24b12773.js" crossorigin="anonymous"></script>
+  <style>
+    /* 요소를 숨기는 클래스 */
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="container" style="height: 1450px;">
+    <div id="musicboard">
+      <!-- 헤더 영역 -->
+      <header>
+        <div id="admin_link">
+          <a href="../main.html">
+            <img src="../../images/header_image.png" alt="header_image" class="header_image">
+          </a>
+          <a href="../admin/admin_main.html">
+            <button type="button" id="admin_btn"></button>
+          </a>
+        </div>
+      </header>
+       
+      <section class="msection">
+        <div id="mcontainer">
+          <div class="mbox">
+            <div class="t_box">
+              <p class="tag">
+                <button type="button" id="buttonAll" onclick="showAllContent()">금주의 BEST 노래 
+                  <span style="font-size: 17px;">(TOP 100)</span></button> &nbsp;
+                <span>&nbsp; 
+                <button type="button" id="buttonA" onclick="showContent('A')">요가</button>&nbsp;/
+                <button type="button" id="buttonB" onclick="showContent('B')">헬스</button>&nbsp;/
+                <button type="button" id="buttonC" onclick="showContent('C')">수영</button>
+                </span>
+              </p>
+            </div>   
+            
+            <table id="mtable">
+              <!-- 테이블 사이즈 비율 맞추기 -->
+              <colgroup>
+                <col style="width:30%">
+                <col style="width:30%">
+                <col style="width:20%">
+                <col style="width:20%">
+              </colgroup>
+              
+              <thead>
+                <tr>
+                  <th class="td_box">곡명</th>
+                  <th class="td_box">앨범명</th>
+                  <th class="td_box">가수명</th>
+                  <th class="td_box">카테고리</th>
+                </tr>
+              </thead>
+              
+              <tbody id="contentA">
+                <tr>
+                  <td>The Four Seasons Winter 2.Largo</td>
+                  <td>Silver Classics 4 - Antonio Vivaldi</td>
+                  <td>Antonio Vivaldi</td>
+                  <td>요가</td>
+                </tr>
+                <tr>
+                  <td>Aad Gurey Nameh</td>
+                  <td>쿤달리니 요가 음악</td>
+                  <td>데브 슈룹 카우르</td>
+                  <td>요가</td>
+                </tr>
+                <tr>
+                  <td>Goodbye Again</td>
+                  <td>Shadow Of The Moon</td>
+                  <td>김광민</td>
+                  <td>요가</td>
+                </tr>
+                <tr>
+                  <td>Love Life</td>
+                  <td>Healing SPA Love (힐링 스파愛 음악)</td>
+                  <td>Ken Davis</td>
+                  <td>요가</td>
+                </tr>
+              </tbody>
+              
+              <tbody id="contentB">
+                <tr>
+                  <td>클락션 (Klaxon)</td>
+                  <td>I SWAY</td>
+                  <td>(여자)아이들</td>
+                  <td>헬스</td>
+                </tr>
+                <tr>
+                  <td>XO (Only If You Say Yes)</td>
+                  <td>ROMANCE : UNTOLD</td>
+                  <td>엔하이픈 (ENHYPEN)</td>
+                  <td>헬스</td>
+                </tr>
+                <tr>
+                  <td>마라탕후루h</td>
+                  <td>마라탕후루(Malatanghulu)</td>
+                  <td>서이브(SEO EVE)</td>
+                  <td>헬스</td>
+                </tr>
+              </tbody>
+              
+              <tbody id="contentC">
+                <tr>
+                  <td>Doo Rags</td>
+                  <td>The Lost Tapes</td>
+                  <td>Nas(나스)</td>
+                  <td>수영</td>
+                </tr>
+                <tr>
+                  <td>Under Control</td>
+                  <td>The Lost Tapes</td>
+                  <td>The Internet(디 인터넷)</td>
+                  <td>수영</td>
+                </tr>
+              </tbody>
+            </table> 
+                        
+            <!-- 페이지 영역 -->
+            <div class="pagination" id="pagination">
+              <!-- 이전 페이지 -->
+              <a>
+                <i class="fa-solid fa-caret-left fa-xl" style="color: #6C7C58; font-size: 20px;"></i>
+              </a>
+              <!-- 현재 페이지는 링크없이 숫자만 표시 -->
+              <span>
+                <a>1</a>
+              </span>  
+              <!-- 다음 페이지 -->
+              <a>
+                <i class="fa-solid fa-caret-right fa-xl" style="color: #6C7C58; font-size: 20px;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- 푸터 영역 -->
+      <footer> 
+        <div id="footer_left">
+          <div id="footer_logo">
+            <img src="../../images/main_logo_bgX.png" alt="main_logo_bgX">
+          </div>
+          <div id="footer_menu">
+            <a href="../submenu/privacy.html">개인정보처리방침</a>
+            <a href="../submenu/rule.html">내부정보관리규정</a>
+            <a href="../submenu/faq.html">자주하는질문</a>
+            <a href="../submenu/contact.html">고객센터</a>
+            <a href="../submenu/way.html">오시는 길</a>
+          </div>
+          <div id="footer_info">
+            <p>
+              서울특별시 영등포구 선유동2로 57 이레빌딩, 19F
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              02-6952-0335
+            </p>
+          </div>
+          <div id="footer_copyright">
+            <p>Copyright © 2024 3WORK:WWW Inc. All Right Reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    function showContent(content) {
+      var contentA = document.getElementById("contentA");
+      var contentB = document.getElementById("contentB");
+      var contentC = document.getElementById("contentC");
+      var pagination = document.getElementById("pagination");
+
+      // 모든 콘텐츠 숨기기
+      contentA.classList.add("hidden");
+      contentB.classList.add("hidden");
+      contentC.classList.add("hidden");
+      pagination.classList.add("hidden");
+
+      // 선택한 콘텐츠만 보이기
+      if (content === "A") {
+          contentA.classList.remove("hidden");
+      } else if (content === "B") {
+          contentB.classList.remove("hidden");
+      } else if (content === "C") {
+          contentC.classList.remove("hidden");
+      }
+    }
+    
+    function showAllContent() {
+      var contentA = document.getElementById("contentA");
+      var contentB = document.getElementById("contentB");
+      var contentC = document.getElementById("contentC");
+      var pagination = document.getElementById("pagination");
+
+      // 모든 콘텐츠 보이기
+      contentA.classList.remove("hidden");
+      contentB.classList.remove("hidden");
+      contentC.classList.remove("hidden");
+      pagination.classList.remove("hidden");
+    }
+
+    // 기본으로 모든 콘텐츠를 표시합니다.
+    showAllContent();
+  </script>
+</body>
+</html>
